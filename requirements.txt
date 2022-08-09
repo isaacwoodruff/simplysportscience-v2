@@ -17,6 +17,7 @@ pylint==2.4.3
 pylint-django==2.0.12
 pylint-plugin-utils==0.6
 python-dateutil==1.5
+python-dotenv==0.20.0
 pytz==2019.3
 requests==2.22.0
 six==1.13.0
