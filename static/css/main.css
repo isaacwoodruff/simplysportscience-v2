@@ -1,0 +1,193 @@
+body {
+    min-height: 100vh;
+    font-family: 'Quicksand', sans-serif;
+}
+
+body h1, h2, h3, h4, h5, h6 {
+    font-family: 'Fugaz One', cursive;
+}
+
+footer {
+    left: 0;
+    right: 0;
+}
+
+.navbar {
+    z-index: 1;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #FFF;
+}
+
+.navbar-nav .btn-outline-info {
+    border-color: #61C5D3;
+}
+
+.btn-outline-info:hover {
+    background-color: #61C5D3;
+}
+
+.navbar-dark .navbar-nav .post-job-link a {
+    color: #FFF;
+}
+
+.navbar-dark .navbar-nav .post-job-link .nav-link:hover {
+    color: #000;
+}
+
+.post-job-link {
+    padding: 0;
+}
+
+#navbar-bg-default {
+    background: #1ab7d0;
+}
+
+.sign-in-bg {
+    background-image: url("https://i.ibb.co/D8V02Ls/coffee-work-table-phone.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+.job-details-bg {
+    background-image: url("https://i.ibb.co/Q8f7NcL/blur-books.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+#can-emp-page-bg {
+    background-image: url("https://i.ibb.co/X4hkSTk/photo-of-people-near-wooden-table-3184418-2-1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#job-list-wrapper {
+    background-image: url("https://i.ibb.co/cwL3K5W/jobs-banner.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #cccccc;
+    min-height: 400px;
+}
+
+#explore-jobs-header {
+    max-width: 560px;
+}
+
+#explore-jobs-header p {
+    font-size: 1.1rem;
+}
+
+.job-post {
+    -webkit-box-shadow: 0 2px 2px -2px #807f7f;
+            box-shadow: 0 2px 2px -2px #807f7f;
+    padding: 20px 0;
+    margin: 0 auto;
+}
+
+/* Aligns employer name correctly in job posts list */
+.job-post .row .col {
+    padding-left: 30px;
+}
+
+.job-post button {
+    min-width: 6rem;
+    min-height: 4rem;
+}
+
+.b-radius-50 {
+    border-radius: 50px;
+}
+
+.b-radius-10 {
+    border-radius: 10px;
+}
+
+.new-job label {
+    color: #FFF;
+}
+
+.input-group .algolia-places {
+    width: auto;
+    color: #000;
+}
+
+.bootstrap-select {
+    max-width: 80px;
+}
+
+.hr-active {
+    border-top: 2px solid rgb(30, 224, 255);
+}
+
+.btn-circle {
+    width: 60px;
+    height: 60px;
+    padding: 6px 2px 8px 0;
+    border-radius: 30px;
+    font-size: 12px;
+    margin-right: 2em;
+}
+
+#pass-reset-conf li {
+    color: #FFF;
+}
+
+.btn-danger {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.fa {
+    padding: 10px;
+    font-size: 25px;
+    width: 45px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.6;
+    text-decoration: none;
+    color: #000;
+}
+
+.fa-facebook {
+    background: #4B5897;
+    color: white;
+}
+
+.fa-instagram {
+    background: #E1306C;
+    background: -webkit-gradient(linear, left top, left bottom, from(45DEG), color-stop(#405DE6), color-stop(#5851DB), color-stop(#833AB4), color-stop(#C13584), color-stop(#E1306C), to(#FD1D1D));
+    background: -o-linear-gradient(45DEG, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+    background: linear-gradient(45DEG, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+    color: white;
+} 
+
+@media (max-width: 767px) {
+    .btn-search {
+        width: 100%;
+    }
+    .input-group .algolia-places {
+        width: 100%;
+    }
+    /* This styles the bootstrap-select dropdown menu to be full width on screens below 768px wide */
+    .input-group-append .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+@media (max-width: 991px) {
+    .btn-circle {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}

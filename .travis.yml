@@ -1,9 +1,0 @@
-language: python
-python:
-  - "3.8"
-install:
-  - pip install -r requirements.txt
-env:
-  - SECRET_KEY="fakekey" DEVELOPMENT="1"
-script:
-  - python manage.py test
