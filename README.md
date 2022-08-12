@@ -1,7 +1,5 @@
 # Simply Sport Science
-[Simply Sport Science](https://simplysportscience.herokuapp.com/) was created as a job board to connect employers and candidates in the area of sport science.
-
-[![Build Status](https://travis-ci.org/isaacwoodruff/simplysportscience.svg?branch=master)](https://travis-ci.org/isaacwoodruff/simplysportscience)
+[Simply Sport Science](https://simplysportscience-v2.herokuapp.com/) was created as a job board to connect employers and candidates in the area of sport science.
 
 ## Table of Contents
 
@@ -64,14 +62,14 @@ The goals of candidates on the website are to:
 
 ## User Stories
 ### Employer User Stories
-A employer using [Simply Sport Science](https://simplysportscience.herokuapp.com/) expects to:
+A employer using [Simply Sport Science](https://simplysportscience-v2.herokuapp.com/) expects to:
 - Be able to register, login, and logout
 - Have their own profile which they can create, read, update or delete
 - Create job posts
 - Easily and securely pay for publishing job posts
 
 ### Candidate User Stories
-A candidate using [Simply Sport Science](https://simplysportscience.herokuapp.com/) expects to:
+A candidate using [Simply Sport Science](https://simplysportscience-v2.herokuapp.com/) expects to:
 - Be able to register, login, and logout
 - Have their own profile which they can create, read, update or delete
 - View jobs from employers
@@ -289,7 +287,7 @@ These tools were used to test the validity of the code for this project:
 - [Pylint-django](https://pypi.org/project/pylint-django/) and [Microsofts Python Extension for VSCode](https://marketplace.visualstudio.com/items?itemName=ms-python.python) was used to validate Python.
 
 ### Testing Matrix
-A testing matrix was created using google spreadsheets. It details all of the tests to make sure the site is responsive and that each feature and compenent works on different screen sizes, devices, and browsers. The testing matrix can be found [here](https://github.com/isaacwoodruff/simplysportscience/blob/master/Testing_Matrix.pdf).
+A testing matrix was created using google spreadsheets. It details all of the tests to make sure the site is responsive and that each feature and compenent works on different screen sizes, devices, and browsers. The testing matrix can be found [here](https://github.com/isaacwoodruff/simplysportscience-v2/blob/master/Testing_Matrix.pdf).
 
 # Deployment
 ## Local Deployment
@@ -307,14 +305,14 @@ For information on how to set these up, you can explore their documentation in t
 
 ### Instructions
 
-1. Follow [this link](https://github.com/isaacwoodruff/simplysportscience/) to the main page of the Simply Sport Science repository.
+1. Follow [this link](https://github.com/isaacwoodruff/simplysportscience-v2/) to the main page of the Simply Sport Science repository.
 2. On the right side of the page click the green **Clone or download** button.
 3. In the '**Clone with HTTPS**' section, copy the URL for the repository.
 4. Open your **terminal/Git Bash**.
 5. Change the current working directory to the location where you want the cloned directory to be made.
 6. Type **git clone**, and then paste the URL that was copied in Step 3 or copy and paste this command:
     ```
-    git clone https://github.com/isaacwoodruff/simplysportscience.git
+    git clone https://github.com/isaacwoodruff/simplysportscience-v2.git
     ```
     
 7. Press **Enter**.
