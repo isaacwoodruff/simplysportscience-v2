@@ -29,8 +29,8 @@ def checkout_view(request):
             'currency': 'eur',
             'quantity': 1,
         }],
-        success_url='https://simplysportscience.herokuapp.com/checkout/payment-success/',
-        cancel_url='https://simplysportscience.herokuapp.com/checkout/payment-failed/',
+        success_url='https://simplysportscience-v2.herokuapp.com/checkout/payment-success/',
+        cancel_url='https://simplysportscience-v2.herokuapp.com/checkout/payment-failed/',
     )
     session_id = session.id
 
