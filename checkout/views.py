@@ -54,7 +54,7 @@ def credit_user(customer_email):
     '''
     user = User.objects.get(email__iexact=customer_email)
     user.employerprofile.credits += 1
-    user.employerprofile.save()
+    return user.employerprofile.save()
 
 
 @csrf_exempt
@@ -68,32 +68,8 @@ def webhook_view(request):
     is taken from it to uniquely identify the user that paid. A function, credit_user(), is 
     called with the id to credit the users account.
     '''
+    event = None
     payload = request.body
-    sig_header = request.META['HTTP_STRIPE_SIGNATURE']
-    event = None
-
-    try:
-        event = stripe.Webhook.construct_event(
-            payload, sig_header, ENDPOINT_SECRET
-        )
-    except ValueError as e:
-        # Invalid payload
-        return HttpResponse(status=400)
-    except stripe.error.SignatureVerificationError as e:
-        # Invalid signature
-        return HttpResponse(status=400)
-
-    # Handle the checkout.session.completed event
-    if event['type'] == 'checkout.session.completed':
-        session = event['data']['object']
-        customer_email = session['client_reference_id']
-        credit_user(customer_email)
-
-
-
-
-    event = None
-    payload = request.data
     sig_header = request.headers['STRIPE_SIGNATURE']
 
     try:
