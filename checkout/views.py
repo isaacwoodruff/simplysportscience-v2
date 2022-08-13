@@ -19,20 +19,24 @@ def checkout_view(request):
     identify the user for order confirmation in the webhook.
     '''
     user = request.user.email
-    session = stripe.checkout.Session.create(
-        client_reference_id=user,
-        payment_method_types=['card'],
+
+    checkout_session = stripe.checkout.Session.create(
         line_items=[{
-            'name': 'Job Post',
-            'description': 'One job post',
-            'amount': 10000,
-            'currency': 'eur',
+            'price_data': {
+                'currency': 'eur',
+                'product_data': {
+                    'name': 'One Job Post',
+                },
+            },
             'quantity': 1,
         }],
+        client_reference_id=user,
+        mode='payment',
         success_url='https://simplysportscience-v2.herokuapp.com/checkout/payment-success/',
         cancel_url='https://simplysportscience-v2.herokuapp.com/checkout/payment-failed/',
     )
-    session_id = session.id
+
+    session_id = checkout_session.stripe_id
 
     context = {
         "page_title": "Checkout",
