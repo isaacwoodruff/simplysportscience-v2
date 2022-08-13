@@ -27,10 +27,11 @@ def checkout_view(request):
                 'product_data': {
                     'name': 'One Job Post',
                 },
-                'unit_amount': 1,
+                'unit_amount': 10000,
             },
             'quantity': 1,
         }],
+        payment_method_types=['card'],
         client_reference_id=user,
         mode='payment',
         success_url='https://simplysportscience-v2.herokuapp.com/checkout/payment-success/',
@@ -87,6 +88,34 @@ def webhook_view(request):
         session = event['data']['object']
         customer_email = session['client_reference_id']
         credit_user(customer_email)
+
+
+
+
+    event = None
+    payload = request.data
+    sig_header = request.headers['STRIPE_SIGNATURE']
+
+    try:
+        event = stripe.Webhook.construct_event(
+            payload, sig_header, ENDPOINT_SECRET
+        )
+    except ValueError as e:
+        # Invalid payload
+        raise e
+        return HttpResponse(status=400)
+    except stripe.error.SignatureVerificationError as e:
+        # Invalid signature
+        raise e
+        return HttpResponse(status=400)
+
+    # Handle the event
+    if event['type'] == 'checkout.session.completed':
+        session = event['data']['object']
+        customer_email = session['client_reference_id']
+        credit_user(customer_email)
+    else:
+        print('Unhandled event type {}'.format(event['type']))    
 
     return HttpResponse(status=200)
 
