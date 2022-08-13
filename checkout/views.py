@@ -27,6 +27,7 @@ def checkout_view(request):
                 'product_data': {
                     'name': 'One Job Post',
                 },
+                'unit_amount': 1,
             },
             'quantity': 1,
         }],
