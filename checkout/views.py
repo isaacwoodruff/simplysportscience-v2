@@ -78,20 +78,16 @@ def webhook_view(request):
         )
     except ValueError as e:
         # Invalid payload
-        raise e
         return HttpResponse(status=400)
     except stripe.error.SignatureVerificationError as e:
         # Invalid signature
-        raise e
         return HttpResponse(status=400)
 
     # Handle the event
     if event['type'] == 'checkout.session.completed':
         session = event['data']['object']
         customer_email = session['client_reference_id']
-        credit_user(customer_email)
-    else:
-        print('Unhandled event type {}'.format(event['type']))    
+        credit_user(customer_email) 
 
     return HttpResponse(status=200)
 
