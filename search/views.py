@@ -7,13 +7,6 @@ from django.db.models import Q
 from django.core.paginator import Paginator
 from jobs.models import Job, EmployerProfile
 
-
-'''
-Algolia keys are for Algolia API which is used to auto-suggest locations in the location search
-'''
-ALGOLIA_PUBLIC_KEY = os.environ.get('ALGOLIA_PUBLIC_KEY')
-ALGOLIA_PUBLIC_APP_ID = os.environ.get('ALGOLIA_PUBLIC_APP_ID')
-
 '''
 Geoapify key for Address Autocomplete API which is used to auto-suggest locations in the location search
 '''
@@ -31,8 +24,6 @@ def job_list(request):
     context = {
         "page_title": "Explore thousands of Jobs",
         "posts": posts,
-        "ALGOLIA_PUBLIC_KEY": ALGOLIA_PUBLIC_KEY,
-        "ALGOLIA_PUBLIC_APP_ID": ALGOLIA_PUBLIC_APP_ID,
         "GEOAPIFY_KEY": GEOAPIFY_KEY,
     }
     return render(request, "job-list.html", context)
@@ -54,8 +45,6 @@ def employer_job_list(request, pk, slug=""):
     context = {
         "page_title": page_title,
         "posts": posts,
-        "ALGOLIA_PUBLIC_KEY": ALGOLIA_PUBLIC_KEY,
-        "ALGOLIA_PUBLIC_APP_ID": ALGOLIA_PUBLIC_APP_ID,
         "GEOAPIFY_KEY": GEOAPIFY_KEY,
     }
     return render(request, "job-list.html", context)
@@ -77,8 +66,6 @@ def employment_type_job_list(request):
     context = {
         "page_title": page_title,
         "posts": posts,
-        "ALGOLIA_PUBLIC_KEY": ALGOLIA_PUBLIC_KEY,
-        "ALGOLIA_PUBLIC_APP_ID": ALGOLIA_PUBLIC_APP_ID,
         "GEOAPIFY_KEY": GEOAPIFY_KEY,
     }
     return render(request, "job-list.html", context)
@@ -100,8 +87,6 @@ def location_job_list(request):
     context = {
         "page_title": page_title,
         "posts": posts,
-        "ALGOLIA_PUBLIC_KEY": ALGOLIA_PUBLIC_KEY,
-        "ALGOLIA_PUBLIC_APP_ID": ALGOLIA_PUBLIC_APP_ID,
         "GEOAPIFY_KEY": GEOAPIFY_KEY,
     }
     return render(request, "job-list.html", context)
@@ -180,8 +165,6 @@ def search_results(request):
         "page_title": page_title,
         "posts": posts,
         "form_data": form_data,
-        "ALGOLIA_PUBLIC_KEY": ALGOLIA_PUBLIC_KEY,
-        "ALGOLIA_PUBLIC_APP_ID": ALGOLIA_PUBLIC_APP_ID,
         "GEOAPIFY_KEY": GEOAPIFY_KEY,
     }
     return render(request, "job-list.html", context)

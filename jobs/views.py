@@ -61,8 +61,7 @@ def new_job(request):
     context = {
         "page_title": "Create a new job",
         "new_job_form": form,
-        "ALGOLIA_PUBLIC_KEY": os.environ.get('ALGOLIA_PUBLIC_KEY'),
-        "ALGOLIA_PUBLIC_APP_ID": os.environ.get('ALGOLIA_PUBLIC_APP_ID'),
+        "GEOAPIFY_KEY": GEOAPIFY_KEY,
     }
     return render(request, "new-job.html", context)
 
