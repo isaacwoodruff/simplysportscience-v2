@@ -10,15 +10,4 @@ $(document).ready(function () {
         delay: 100,
         autoFocus: true,
     });
-
-    /*
-    Calls the Algolia API with the keys provided from the view via jinja template tags
-    in the relevant templates. This is then used to suggest autocomplete for city names
-    across the world.
-    */
-    var placesAutocomplete = places({
-        appId: ALGOLIA_PUBLIC_APP_ID,
-        apiKey: ALGOLIA_PUBLIC_KEY,
-        container: document.querySelector('#address-input')
-    });
 })
