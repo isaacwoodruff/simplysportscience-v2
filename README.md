@@ -142,7 +142,7 @@ slug | blank=True, null=True | SlugField
 - The main component is the search feature for finding all jobs on the website with options to:
     - Filter by job title, location, type of employment (full time, part time, etc.)
 - The search features an autocomplete for job titles that pulls job titles from the database and suggest them to the user. This uses jQuery UI 
-- The search also makes use of Algolia Places API in the location input to autocomplete city names from all over the world
+- The search also makes use of Geoapify Address Autocomplete API in the location input to autocomplete locations from all over the world
 - Paginated results with 10 posts per page
 - The amount of days ago the job was posted
 - Posts containing job title, employment company, employment type, location
@@ -189,7 +189,7 @@ slug | blank=True, null=True | SlugField
 
 ##### New Job Page
 - Displays a form to create a new job
-- Uses Algolia Places API to autocomplete on the location input for suggestions of cities worldwide
+- Uses Geoapify Address Autocomplete API to autocomplete on the location input for suggestions of cities worldwide
 - At the bottom of the page there is a button to post the new job. If the employer has credits then the job will be posted. If they don't have credits then they receive a warning telling them to buy more
 - The amount of credits they have is displayed next to the post job button
 - There is a Buy More button next to the credit amount. This navigates to a page that redirects the user to Stripe Checkout's payment gateway.
@@ -258,7 +258,7 @@ slug | blank=True, null=True | SlugField
 - [Visual Studio Code](https://code.visualstudio.com/) as the Integrated Development Environment while developing this project.
 - [PIP](https://pip.pypa.io/en/stable/installing/) to install the tools needed in this project.
 - [Stripe](https://stripe.com) as a payment gateway to validate and accept credit card payments securely.
-- [Algolia Places ](https://community.algolia.com/places/) to provide a fast and easy way to use address search autocomplete by harnessing OpenStreetMap's database.
+- [Geoapify Address Autocomplete](https://www.geoapify.com/address-autocomplete) to provide a fast and easy way to use address search autocomplete by harnessing OpenStreetMap's database.
 - [Git](https://git-scm.com) for version control during the development process. 
 - [GitHub](https://github.com/) for a remote repository.
 - [Travis](https://travis-ci.org/) for Continuous Integration.
