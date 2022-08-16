@@ -204,6 +204,11 @@ slug | blank=True, null=True | SlugField
 
 
 ## Features Left To Implement
+##### Jobs Web Scraper
+- A python web scrapper to:
+    - Collect jobs from a selection of other websites
+    - Extract the data and populate the database with new jobs
+
 ##### Home/Landing Page
 - Landing page which shows several sections:
     - A search bar for finding jobs at the top
