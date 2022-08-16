@@ -13,6 +13,9 @@ function addressAutocomplete(containerElement, callback, options) {
     inputElement.setAttribute("placeholder", options.placeholder);
     inputElement.setAttribute("id", "address-input");
     inputElement.setAttribute("name", "location");
+    if (locationFromForm != ""){
+        inputElement.setAttribute("value", locationFromForm);
+    }
     inputElement.classList.add("form-control");
     containerElement.appendChild(inputElement);
 
