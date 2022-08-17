@@ -1,4 +1,5 @@
 import os
+from django.conf import settings
 from django.http import JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.template.defaultfilters import slugify
@@ -61,7 +62,7 @@ def new_job(request):
     context = {
         "page_title": "Create a new job",
         "new_job_form": form,
-        "GEOAPIFY_KEY": GEOAPIFY_KEY,
+        "GEOAPIFY_KEY": settings.GEOAPIFY_KEY,
     }
     return render(request, "new-job.html", context)
 

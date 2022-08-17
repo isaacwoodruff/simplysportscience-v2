@@ -1,16 +1,12 @@
 import os
 import json
 import operator
+from django.conf import settings
 from functools import reduce
 from django.shortcuts import render, get_object_or_404, HttpResponse
 from django.db.models import Q
 from django.core.paginator import Paginator
 from jobs.models import Job, EmployerProfile
-
-'''
-Geoapify key for Address Autocomplete API which is used to auto-suggest locations in the location search
-'''
-GEOAPIFY_KEY = os.environ.get('GEOAPIFY_KEY')
 
 def job_list(request):
     '''
@@ -24,7 +20,7 @@ def job_list(request):
     context = {
         "page_title": "Explore thousands of Jobs",
         "posts": posts,
-        "GEOAPIFY_KEY": GEOAPIFY_KEY,
+        "GEOAPIFY_KEY": settings.GEOAPIFY_KEY,
     }
     return render(request, "job-list.html", context)
 
@@ -45,7 +41,7 @@ def employer_job_list(request, pk, slug=""):
     context = {
         "page_title": page_title,
         "posts": posts,
-        "GEOAPIFY_KEY": GEOAPIFY_KEY,
+        "GEOAPIFY_KEY": settings.GEOAPIFY_KEY,
     }
     return render(request, "job-list.html", context)
 
@@ -66,7 +62,7 @@ def employment_type_job_list(request):
     context = {
         "page_title": page_title,
         "posts": posts,
-        "GEOAPIFY_KEY": GEOAPIFY_KEY,
+        "GEOAPIFY_KEY": settings.GEOAPIFY_KEY,
     }
     return render(request, "job-list.html", context)
 
@@ -87,7 +83,7 @@ def location_job_list(request):
     context = {
         "page_title": page_title,
         "posts": posts,
-        "GEOAPIFY_KEY": GEOAPIFY_KEY,
+        "GEOAPIFY_KEY": settings.GEOAPIFY_KEY,
     }
     return render(request, "job-list.html", context)
 
@@ -165,6 +161,6 @@ def search_results(request):
         "page_title": page_title,
         "posts": posts,
         "form_data": form_data,
-        "GEOAPIFY_KEY": GEOAPIFY_KEY,
+        "GEOAPIFY_KEY": settings.GEOAPIFY_KEY,
     }
     return render(request, "job-list.html", context)
