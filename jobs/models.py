@@ -32,7 +32,6 @@ class Job(models.Model):
         EmployerProfile, on_delete=models.CASCADE, null=True)
     title = models.CharField(max_length=200)
     description = models.TextField(blank=True, null=True)
-    requirements = models.TextField(blank=True, null=True)
     location = models.CharField(max_length=100)
     employer = models.CharField(max_length=200)
     views = models.IntegerField(default=0)
