@@ -30,7 +30,7 @@
     </head>
 
     <!-- jinja body tag is used to apply different background images to the body depending on the page -->
-    <body {% block body_class %}{% endblock %}>
+    <body class= "d-flex flex-column" {% block body_class %}{% endblock %}>
 
         
         <!-- jinja header tag is used to apply different background images to the header.
@@ -110,7 +110,7 @@
 
         </main>
         
-        <footer class="position-absolute bottom-0 bg-info">
+        <footer class="mt-auto bottom-0 bg-info">
 
             {% block footer %}{% endblock %}
 
